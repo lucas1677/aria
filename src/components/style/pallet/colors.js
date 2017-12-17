@@ -1,0 +1,16 @@
+export const Vulcan = "#343A40";
+export const HintOfRed = "#F8F9FA";
+export const BlueGreen = "#17A2B8";
+export const MikadoYellow = "#FFC107";
+export const Jasper = "#DC3545";
+export const Eucalyptus = "#28A745";
+export const OsloGray = "#868E96";
+export const Azure = "#007BFF";
+export const FrenchGray = "#BDBDBD";
+export const DoveGray = "#757575";
+export const Black = "#212121";
+export const BlueDeFrance = "#318BFA";
+export const White = "#FFFFFF";
+export const Mischka = "#CED8DC";
+export const Hoki = "#5D7D8A";
+export const SanJuan = "#435A63";

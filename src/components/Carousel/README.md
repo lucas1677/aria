@@ -1,0 +1,2 @@
+#Carousel
+A slideshow component
