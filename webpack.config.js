@@ -1,8 +1,9 @@
 const path = require('path');
 
+const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
-const webpack = require('webpack');
+const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 
 module.exports = {
   entry: {
@@ -15,7 +16,7 @@ module.exports = {
       path.join(__dirname, "public"),
       path.join(__dirname, "dist"),
     ],
-    compress: false,
+    compress: true,
     port: 3000,
     index: "index.html",
     open: true,
@@ -28,16 +29,17 @@ module.exports = {
       template: 'public/index.html'
     }),
     new webpack.NamedModulesPlugin(),
-    new webpack.HotModuleReplacementPlugin()
+    new webpack.HotModuleReplacementPlugin(),
+    new UglifyJSPlugin()
   ],
   resolve: {
     extensions: ['.js', '.jsx']
   },
   module: {
-    loaders: [{
+    rules: [{
       test: /\.jsx?$/,
       loaders: ['babel-loader'],
-      exclude: /\.(node_modules|public\/dist)$/,
+      exclude: /\.(node_modules)$/,
       include: __dirname,
     }, {
       test: /\.css$/,

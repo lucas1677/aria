@@ -1,8 +1,11 @@
 import React from 'react';
 import { render } from 'react-dom';
-import {Button} from 'antd';
+import {Button, Calendar} from 'antd';
 
 render(
-  <Button type="primary">222</Button>,
+  <div>
+    <Button type="primary">2232</Button>
+    <Calendar />
+  </div>,
   document.getElementById('root')
 );
