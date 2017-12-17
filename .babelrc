@@ -1,4 +1,18 @@
 {
-  "presets": ["env", "react", "stage-1"],
-  "plugins": ["transform-object-rest-spread"]
+  "presets": [
+    "env",
+    "react",
+    "stage-1"
+  ],
+  "plugins": [
+    "transform-object-rest-spread",
+    [
+      "import",
+      {
+        "libraryName": "antd",
+        "libraryDirectory": "es",
+        "style": "css"
+      }
+    ]
+  ]
 }
