@@ -1,14 +1,57 @@
 {
-  "name": "front-end",
-  "version": "1.0.0",
+  "name": "arias-education-platform-fe",
+  "version": "2017.12.17",
   "description": "front end support for arias-education-platform",
-  "main": "index.js",
   "scripts": {
+    "start": "babel-node devServer.js",
+    "lint": "eslint src",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
-  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git@gitee.com:arias-education/haitang-edu-platform-fe.git"
+  },
+  "author": "lucas shao",
+  "license": "MIT",
   "dependencies": {
-    "react": "^16.2.0"
+    "antd": "^3.0.1",
+    "babel-plugin-import": "^1.6.3",
+    "babel-polyfill": "^6.26.0",
+    "bezier-easing": "^2.0.3",
+    "lodash": "^4.17.4",
+    "memory-fs": "^0.4.1",
+    "normalizr": "^3.2.4",
+    "prop-types": "^15.6.0",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "react-redux": "^5.0.6",
+    "react-router": "^4.2.0",
+    "reactcss": "^1.2.3",
+    "redux": "^3.7.2",
+    "redux-logger": "^3.0.6",
+    "redux-thunk": "^2.2.0",
+    "tinycolor2": "^1.4.1",
+    "uuid": "^3.1.0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-1": "^6.24.1",
+    "babel-register": "^6.26.0",
+    "css-loader": "^0.28.7",
+    "eslint": "^4.13.1",
+    "eslint-config-airbnb": "^16.1.0",
+    "eslint-plugin-import": "^2.8.0",
+    "eslint-plugin-jsx-a11y": "^6.0.3",
+    "eslint-plugin-react": "^7.5.1",
+    "express": "^4.16.2",
+    "style-loader": "^0.19.1",
+    "webpack": "^3.10.0",
+    "webpack-dev-middleware": "^2.0.1",
+    "webpack-hot-middleware": "^2.21.0"
   }
 }
