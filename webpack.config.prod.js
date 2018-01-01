@@ -5,7 +5,7 @@ const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 
 module.exports = {
   entry: {
-    app: './src/index.js'
+    app: './src/index.tsx'
   },
   plugins: [
     new CleanWebpackPlugin(['dist']),
@@ -14,8 +14,51 @@ module.exports = {
     }),
     new UglifyJSPlugin()
   ],
+  resolve: {
+    extensions: ['.ts', '.tsx', '.jsx', '.js']
+  },
+  module: {
+    rules: [{
+      test: /\.tsx?$/,
+      loader: "ts-loader"
+    },{
+      test: /\.jsx?$/,
+      loaders: ['babel-loader'],
+      exclude: /\.(node_modules)$/,
+      include: __dirname,
+    }, {
+      test: /\.css$/,
+      use: [
+        'style-loader',
+        'css-loader'
+      ]
+    }, {
+      test: /\.html$/,
+      loader: 'html-loader'
+    }, {
+      test: /\.(png|svg|jpg|gif)$/,
+      use: [
+        'file-loader'
+      ]
+    }, {
+      test: /\.(woff|woff2|eot|ttf|otf)$/,
+      use: [
+        'file-loader'
+      ]
+    }, {
+      test: /\.(csv|tsv)$/,
+      use: [
+        'csv-loader'
+      ]
+    }, {
+      test: /\.xml$/,
+      use: [
+        'xml-loader'
+      ]
+    }],
+  },
   output: {
     filename: 'bundle.js',
     path: path.resolve(__dirname, 'dist')
-  }
+  },
 };

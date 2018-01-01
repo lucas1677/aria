@@ -6,7 +6,7 @@ const CleanWebpackPlugin = require('clean-webpack-plugin');
 
 module.exports = {
   entry: {
-    app: './src/index.js',
+    app: './src/index.tsx',
   },
   devtool: 'inline-source-map',
   devServer: {
@@ -31,10 +31,13 @@ module.exports = {
     new webpack.HotModuleReplacementPlugin(),
   ],
   resolve: {
-    extensions: ['.js', '.jsx']
+    extensions: ['.ts', '.tsx', '.jsx', '.js']
   },
   module: {
     rules: [{
+      test: /\.tsx?$/,
+      loader: "ts-loader"
+    }, {
       test: /\.jsx?$/,
       loaders: ['babel-loader'],
       exclude: /\.(node_modules)$/,
