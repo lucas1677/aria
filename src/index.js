@@ -1,11 +1,8 @@
 import React from 'react';
-import { render } from 'react-dom';
-import {Button, Calendar} from 'antd';
+import {render} from 'react-dom';
+import Root from './components/RouterWrapper';
 
 render(
-  <div>
-    <Button type="primary">2232</Button>
-    <Calendar />
-  </div>,
+  <Root />,
   document.getElementById('root')
 );

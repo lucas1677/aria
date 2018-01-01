@@ -3,7 +3,6 @@ const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
-const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 
 module.exports = {
   entry: {
@@ -16,7 +15,7 @@ module.exports = {
       path.join(__dirname, "public"),
       path.join(__dirname, "dist"),
     ],
-    compress: true,
+    compress: false,
     port: 3000,
     index: "index.html",
     open: true,
@@ -30,7 +29,6 @@ module.exports = {
     }),
     new webpack.NamedModulesPlugin(),
     new webpack.HotModuleReplacementPlugin(),
-    new UglifyJSPlugin()
   ],
   resolve: {
     extensions: ['.js', '.jsx']
