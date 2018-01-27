@@ -2,6 +2,7 @@ const webpack = require('webpack');
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
+const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 
 const isProduction = process.argv.indexOf('-p') >= 0;
 
@@ -33,10 +34,10 @@ module.exports = {
         rules: [{
             test: /\.tsx?$/,
             loader: isProduction
-                ? 'awesome-typescript-loader?module=es6'
+                ? 'ts-loader'
                 : [
                     'react-hot-loader/webpack',
-                    'awesome-typescript-loader'
+                    'ts-loader'
                 ]
         }, {
             test: /\.jsx?$/,
@@ -75,14 +76,19 @@ module.exports = {
         }],
     },
     plugins: [
-        new CleanWebpackPlugin(['dist']),
-        new HtmlWebpackPlugin({
-            filename: 'index.html',
-            template: 'public/index.html'
-        }),
+        new CleanWebpackPlugin(['dist','build']),
         new webpack.NamedModulesPlugin(),
-        new webpack.HotModuleReplacementPlugin(),
-        new webpack.
+        ...(
+            isProduction?
+                [new UglifyJSPlugin()]
+                : [
+                    new HtmlWebpackPlugin({
+                        template: __dirname + 'public/index.html',
+                        filename: 'index.html',
+                    }),
+                    new webpack.HotModuleReplacementPlugin(),
+                ]
+        )
     ],
     devServer: {
         hot: true,
@@ -93,7 +99,7 @@ module.exports = {
         compress: false,
         port: 3000,
         index: "index.html",
-        open: true,
+        open: false,
         useLocalIp: false
     },
     node: {
