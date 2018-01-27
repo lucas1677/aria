@@ -29,3 +29,5 @@ class MyErrorBoundary extends React.Component<AppProps, AppStates> {
         }
     }
 }
+
+export default MyErrorBoundary;
