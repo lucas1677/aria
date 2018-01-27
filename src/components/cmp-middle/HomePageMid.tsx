@@ -11,11 +11,11 @@ type AppProps = {
 type AppStates = {}
 
 export default class HomePageMid extends React.Component<AppProps, AppStates> {
-    constructor(props: object) {
+    constructor(props) {
         super(props);
     }
 
-    componentDidCatch(error: object, info: object) {
+    componentDidCatch(error, info) {
 
     }
 

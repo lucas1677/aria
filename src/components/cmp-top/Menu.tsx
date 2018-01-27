@@ -2,8 +2,8 @@ import * as React from 'react';
 import {style} from "typestyle";
 import * as H from 'history';
 import * as theme from '../../theme/const';
-import {connectedComponentHelper, State} from "../../config";
 import {push} from "react-router-redux";
+import {connect} from 'react-redux';
 
 const componentBaseStyle = style({
     backgroundColor: theme.colors.primary,
@@ -14,12 +14,13 @@ const componentBaseStyle = style({
 type AppProps = {
     history?: H.History,
     title?: string,
-    targetAddress?: string
+    targetAddress?: string,
+    pushToTarget?: any
 }
 
 type AppStates = {}
 
-const mapStateToProps = (state: State) => ({});
+const mapStateToProps = (state) => ({});
 
 const mapDispatchToProps = (dispatch) => ({
     pushToTarget: (targetAddress) => {
@@ -27,12 +28,8 @@ const mapDispatchToProps = (dispatch) => ({
     },
 });
 
-// Magic happening here
-const {propsGeneric, connect} = connectedComponentHelper<AppProps>()(mapStateToProps, mapDispatchToProps);
-type ComponentProps = typeof propsGeneric;
-
-class Menu extends React.Component<ComponentProps, AppStates> {
-    pushToTarget: any;
+@connect(mapStateToProps, mapDispatchToProps)
+class Menu extends React.Component<AppProps, AppStates> {
 
     constructor(props) {
         super(props);
@@ -44,7 +41,7 @@ class Menu extends React.Component<ComponentProps, AppStates> {
                 className={componentBaseStyle}
                 onClick={
                     this.props.targetAddress ?
-                        () => this.pushToTarget(this.props.targetAddress) : null
+                        () => this.pushToTarget(this.props.targetAddress) : undefined
                 }
             >
                 {this.props.title ? this.props.title : ""}
@@ -53,5 +50,4 @@ class Menu extends React.Component<ComponentProps, AppStates> {
     }
 }
 
-// todo go on the topic use redux with react in typescript, this connect didn't work well
-export default connect(Menu);
+export default Menu;
