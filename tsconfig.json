@@ -23,7 +23,7 @@
       "dom"
     ],
     "typeRoots": [
-      "./src/types",
+      "./types",
       "./node_modules/@types"
     ],
     "target": "es5", // "es2015" for ES6+ engines
@@ -40,9 +40,6 @@
     "removeComments": true,
     "sourceMap": true
   },
-  "include": [
-    "src/**/*"
-  ],
   "exclude": [
     "dist",
     "build",
