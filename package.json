@@ -7,9 +7,8 @@
   "license": "MIT",
   "main": "webpack.config.js",
   "scripts": {
-    "start": "webpack-dev-server --config webpack.config.js",
-    "build": "webpack --config webpack.config.js",
-    "build:prod": "webpack --config webpack.config.js -p",
+    "start": "webpack-dev-server --port 3168 --open --debug --devtool cheap-module-source-map --output-pathinfo --history-api-fallback --hot --inline --progress --colors",
+    "build": "webpack -p --progress --colors",
     "lint": "tslint -c tslint.json 'src/**/*.{ts,tsx}'",
     "test": "jest"
   },

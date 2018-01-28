@@ -1,13 +1,12 @@
 const webpack = require('webpack');
-const path = require('path');
+const Path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const CleanWebpackPlugin = require('clean-webpack-plugin');
-const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 
 const isProduction = process.argv.indexOf('-p') >= 0;
+const outPath = Path.join(__dirname, './dist');
+const sourcePath = Path.join(__dirname, './src');
 
 module.exports = {
-    devtool: 'inline-source-map',
     entry: {
         app: './src/index.tsx',
         vendor: [
@@ -19,8 +18,9 @@ module.exports = {
         ]
     },
     output: {
-        filename: 'bundle.js',
-        path: path.resolve(__dirname, 'dist')
+        path: outPath,
+        publicPath: '/',
+        filename: 'bundle.js'
     },
     target: "web",
     resolve: {
@@ -28,7 +28,7 @@ module.exports = {
         // Fix webpack's default behavior to not load packages with jsnext:main module
         // https://github.com/Microsoft/TypeScript/issues/11677
         mainFields: ['browser', 'main'],
-        alias: {'@src': path.join(__dirname, 'src')}
+        alias: {'@src': Path.join(__dirname, 'src')}
     },
     module: {
         rules: [{
@@ -86,22 +86,16 @@ module.exports = {
         }),
         new webpack.optimize.AggressiveMergingPlugin(),
         new HtmlWebpackPlugin({
-            template: __dirname + '/public/index.html',
-            filename: 'index.html',
+            template: 'src/index.html',
         }),
         new webpack.HotModuleReplacementPlugin(),
     ],
     devServer: {
         hot: true,
-        contentBase: [
-            path.join(__dirname, "public"),
-            path.join(__dirname, "dist"),
-        ],
-        compress: false,
-        port: 3000,
-        index: "index.html",
-        open: false,
-        useLocalIp: false
+        contentBase: sourcePath,
+        stats: {
+            warnings: false
+        },
     },
     node: {
         // workaround for webpack-dev-server issue
