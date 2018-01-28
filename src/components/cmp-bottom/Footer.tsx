@@ -4,7 +4,8 @@ import {style} from "typestyle";
 const componentBaseStyle = style({
     height: '60px',
     backgroundColor: '#777',
-    borderTopColor: '#000'
+    borderTopColor: '#000',
+    borderTop: '1px solid'
 });
 
 type AppProps = {}
@@ -19,7 +20,7 @@ export default class Footer extends React.Component<AppProps, AppStates> {
     render(): React.ReactNode {
         return (
             <div className={componentBaseStyle}>
-                12fk
+                1234
             </div>
         );
     }

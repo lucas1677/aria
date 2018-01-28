@@ -7,8 +7,9 @@ const outPath = Path.join(__dirname, './dist');
 const sourcePath = Path.join(__dirname, './src');
 
 module.exports = {
+    context: sourcePath,
     entry: {
-        app: './src/index.tsx',
+        main: './index.tsx',
         vendor: [
             'react',
             'react-dom',
@@ -86,13 +87,12 @@ module.exports = {
         }),
         new webpack.optimize.AggressiveMergingPlugin(),
         new HtmlWebpackPlugin({
-            template: 'src/index.html',
+            template: 'index.html',
         }),
-        new webpack.HotModuleReplacementPlugin(),
     ],
     devServer: {
-        hot: true,
         contentBase: sourcePath,
+        hot: true,
         stats: {
             warnings: false
         },

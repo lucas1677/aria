@@ -5,7 +5,11 @@
   "private": true,
   "description": "front end support for arias-education-platform",
   "license": "MIT",
-  "main": "webpack.config.js",
+  "main": "dist/bundle.js",
+  "repository": {
+    "type": "git",
+    "url": "git@gitee.com:arias-education/haitang-edu-platform-fe.git"
+  },
   "scripts": {
     "start": "webpack-dev-server --port 3168 --open --debug --devtool cheap-module-source-map --output-pathinfo --history-api-fallback --hot --inline --progress --colors",
     "build": "webpack -p --progress --colors",
@@ -23,10 +27,6 @@
     },
     "testRegex": "/__tests__/.*\\.(ts|tsx|js)$"
   },
-  "repository": {
-    "type": "git",
-    "url": "git@gitee.com:arias-education/haitang-edu-platform-fe.git"
-  },
   "dependencies": {
     "classnames": "^2.2.5",
     "normalizr": "^3.2.4",
@@ -41,7 +41,6 @@
     "redux-logger": "^3.0.6",
     "redux-thunk": "^2.2.0",
     "tinycolor2": "^1.4.1",
-
     "tslib": "^1.9.0",
     "typescript": "^2.6.2",
     "typestyle": "^1.6.0",
