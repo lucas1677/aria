@@ -76,19 +76,20 @@ module.exports = {
         }],
     },
     plugins: [
-        new CleanWebpackPlugin(['dist','build']),
-        new webpack.NamedModulesPlugin(),
-        ...(
-            isProduction?
-                [new UglifyJSPlugin()]
-                : [
-                    new HtmlWebpackPlugin({
-                        template: __dirname + 'public/index.html',
-                        filename: 'index.html',
-                    }),
-                    new webpack.HotModuleReplacementPlugin(),
-                ]
-        )
+        new webpack.DefinePlugin({
+            'process.env.NODE_ENV': isProduction === true ? JSON.stringify('production') : JSON.stringify('development')
+        }),
+        new webpack.optimize.CommonsChunkPlugin({
+            name: 'vendor',
+            filename: 'vendor.bundle.js',
+            minChunks: Infinity
+        }),
+        new webpack.optimize.AggressiveMergingPlugin(),
+        new HtmlWebpackPlugin({
+            template: __dirname + '/public/index.html',
+            filename: 'index.html',
+        }),
+        new webpack.HotModuleReplacementPlugin(),
     ],
     devServer: {
         hot: true,

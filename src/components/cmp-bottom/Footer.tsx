@@ -19,7 +19,7 @@ export default class Footer extends React.Component<AppProps, AppStates> {
     render(): React.ReactNode {
         return (
             <div className={componentBaseStyle}>
-
+                11
             </div>
         );
     }
