@@ -1,7 +1,10 @@
 import * as React from 'react';
+import * as theme from '@src/theme/const';
 import {style} from 'typestyle';
-import * as theme from '../../theme/const';
 import {connect} from 'react-redux';
+import * as RoutesActions from '@src/actions/routes';
+import {bindActionCreators} from 'redux';
+import {RouteComponentProps} from 'react-router';
 
 const componentBaseStyle = style({
     backgroundColor: theme.colors.primary,
@@ -10,21 +13,24 @@ const componentBaseStyle = style({
 });
 
 export namespace Menu {
-    export interface Props {
+    export interface Props extends RouteComponentProps<void>{
         title?: string,
         targetAddress?: string,
-        pushToTarget?: void
+        pushToTarget?: void,
+        actions: typeof RoutesActions;
     }
 
     export interface State {
-
+        activeRoutePath: string
     }
 }
 
-const mapStateToProps = (state) => ({});
+const mapStateToProps = (state: ApplicationState) => ({
+    activeRoutePath: state.currentRoutePath
+});
 
 const mapDispatchToProps = (dispatch) => ({
-
+    actions: bindActionCreators(RoutesActions, dispatch)
 });
 
 @connect(mapStateToProps, mapDispatchToProps)

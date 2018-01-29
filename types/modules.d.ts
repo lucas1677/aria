@@ -3,3 +3,7 @@ declare interface PathParam {
     newTab?: boolean
     newWindow?: boolean
 }
+
+declare interface ApplicationState {
+    currentRoutePath: string
+}
