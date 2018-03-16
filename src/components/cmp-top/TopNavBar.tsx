@@ -1,20 +1,32 @@
 import * as React from 'react';
-import {style} from "typestyle";
-import * as theme from '../../theme/const';
-import Menu from "./Menu";
+import {style} from 'typestyle';
+
+import * as theme from '@src/theme/const';
+import BookIcon from '@src/components/react-icons/BookIcon';
 
 const componentBaseStyle = style({
     backgroundColor: theme.colors.primary,
     height: '50px',
     color: theme.colors.textPrimary
 });
+const appLogoImage = style({
+    display: 'inline-block',
+    float: 'left',
+    width: '50px',
+    height: '50px'
+});
+const appLogoText = style({
+    display: 'inline-block',
+    float: 'left',
+    height: '100%',
+    marginLeft: '10px',
+    fontSize: theme.fontSize.appLogoTextFontSize,
+    lineHeight: theme.fontSize.appLogoTextLineHeight,
+});
 
-type AppProps = {
-}
+type Props = {}
 
-type AppStates = {}
-
-class TopNavBar extends React.Component<AppProps, AppStates> {
+class TopNavBar extends React.Component<Props> {
     constructor(props) {
         super(props);
     }
@@ -22,7 +34,14 @@ class TopNavBar extends React.Component<AppProps, AppStates> {
     render(): React.ReactNode {
         return (
             <div className={componentBaseStyle}>
-                <Menu title="222" />
+                <img className={appLogoImage} src="image/app-logo.png" alt="app-logo"/>
+                <div className={appLogoText}>
+                    海棠学院
+                </div>
+                <div className={appLogoText}>
+                    <BookIcon/>
+                </div>
+                <div></div>
             </div>
         );
     }

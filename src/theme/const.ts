@@ -24,6 +24,8 @@ export const colors = {
 };
 
 export const fontSize = {
+    appLogoTextFontSize: '23px',
+    appLogoTextLineHeight: '50px',
     categoryTitleFontSize: '55px',
     categoryNavLinkFontSize: '24px',
     bannerMainTextFontSize: '48px',
