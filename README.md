@@ -1,6 +1,6 @@
-# haitang-edu-platform-fe
+# magibit-official-website
 
-##海唐学院 前端支持项目
+##麦极创客 官网
 
 #####后台部分, 由单独的JAVA-RESTFUL-API 项目支持
 
