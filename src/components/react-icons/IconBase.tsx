@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 
 type Props = {
     viewBox?: string;
@@ -7,7 +7,7 @@ type Props = {
     fillColor?: string;
 };
 
-export default class IconBase extends React.Component<Props> {
+export class IconBase extends React.Component<Props> {
     render(): React.ReactNode {
 
         const {viewBox = '0 0 40 40', pathData, size, fillColor = 'currentColor'} = this.props;

@@ -1,7 +1,7 @@
 import * as React from 'react';
 import {style} from 'typestyle';
 
-import BookIcon from '@src/components/react-icons/BookIcon';
+import {BookIcon} from '@src/components/react-icons/BookIcon';
 import * as theme from '@src/theme/const';
 
 const componentBaseStyle = style({
@@ -36,7 +36,7 @@ class TopNavBar extends React.Component<Props> {
             <div className={componentBaseStyle}>
                 <img className={appLogoImage} src={'image/app-logo.png'} alt="app-logo"/>
                 <div className={appLogoText}>
-                    海棠学院
+                    麦极创客
                 </div>
                 <div className={appLogoText}>
                     <BookIcon/>

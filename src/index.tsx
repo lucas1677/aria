@@ -1,19 +1,18 @@
 import * as React from 'react';
 import * as ReactDom from 'react-dom';
 
-import {createStore, combineReducers, applyMiddleware} from 'redux'
+import {createHashHistory as createHistory} from 'history';
 import {Provider} from 'react-redux';
+import {Route} from 'react-router';
+import {ConnectedRouter, push, routerMiddleware, routerReducer} from 'react-router-redux';
+import {applyMiddleware, combineReducers, createStore} from 'redux';
+
+import Application from '@src/components/Application';
+import Footer from '@src/components/cmp-bottom/Footer';
+import HomePageMid from '@src/components/cmp-middle/HomePageMid';
+import MainSpaceWrapper from '@src/components/cmp-middle/MainSpaceWrapper';
+import TopNavBar from '@src/components/cmp-top/TopNavBar';
 import reducers from '@src/reducers';
-
-import {ConnectedRouter, routerReducer, routerMiddleware, push} from 'react-router-redux';
-import createHistory from 'history/createHashHistory'
-import {Route} from 'react-router'
-
-import HomePageMid from "@src/components/cmp-middle/HomePageMid";
-import MainSpaceWrapper from "@src/components/cmp-middle/MainSpaceWrapper";
-import Application from "@src/components/Application";
-import TopNavBar from "@src/components/cmp-top/TopNavBar";
-import Footer from "@src/components/cmp-bottom/Footer";
 
 // Create a history of your choosing (we're using a browser history in this case)
 const history = createHistory();
@@ -26,7 +25,7 @@ const middleware = routerMiddleware(history);
 const store = createStore(
     combineReducers({
         ...reducers,
-        router: routerReducer
+        router: routerReducer,
     }),
     applyMiddleware(middleware)
 );
