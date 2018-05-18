@@ -41,40 +41,39 @@ module.exports = {
                     'ts-loader'
                 ]
         }, {
-            test: /\.jsx?$/,
-            loaders: ['babel-loader'],
-            exclude: /\.(node_modules)$/,
-            include: __dirname,
+            test: /\.css$/, loader: 'typings-for-css-modules?modules'
         }, {
-            test: /\.css$/,
-            use: [
-                'style-loader',
-                'css-loader'
-            ]
+            test: /\.scss$/, loader: 'typings-for-css-modules?modules&sass'
         }, {
             test: /\.html$/,
-            loader: 'html-loader'
+            loader:
+                'html-loader'
         }, {
             test: /\.(png|svg|jpg|gif)$/,
-            use: [
-                'file-loader'
-            ]
+            use:
+                [
+                    'file-loader'
+                ]
         }, {
             test: /\.(woff|woff2|eot|ttf|otf)$/,
-            use: [
-                'file-loader'
-            ]
+            use:
+                [
+                    'file-loader'
+                ]
         }, {
             test: /\.(csv|tsv)$/,
-            use: [
-                'csv-loader'
-            ]
+            use:
+                [
+                    'csv-loader'
+                ]
         }, {
             test: /\.xml$/,
-            use: [
-                'xml-loader'
-            ]
-        }],
+            use:
+                [
+                    'xml-loader'
+                ]
+        }
+        ],
     },
     plugins: [
         new webpack.DefinePlugin({
@@ -90,18 +89,22 @@ module.exports = {
             template: 'index.html',
         }),
     ],
-    devServer: {
-        contentBase: sourcePath,
-        hot: true,
-        stats: {
-            warnings: false
-        },
-    },
+    devServer:
+        {
+            contentBase: sourcePath,
+            hot:
+                true,
+            stats:
+                {
+                    warnings: false
+                }
+            ,
+        }
+    ,
     node: {
         // workaround for webpack-dev-server issue
         // https://github.com/webpack/webpack-dev-server/issues/60#issuecomment-103411179
         fs: 'empty',
         net: 'empty'
     }
-}
-;
+};

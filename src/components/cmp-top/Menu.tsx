@@ -1,30 +1,28 @@
-import * as React from 'react';
-import * as theme from '@src/theme/const';
-import {style} from 'typestyle';
 import * as RoutesActions from '@src/actions/routes';
+import * as theme from '@src/theme/const';
+import * as React from 'react';
+import {style} from 'typestyle';
 
 const componentBaseStyle = style({
     backgroundColor: theme.colors.primary,
     height: '50px',
-    color: theme.colors.textPrimary
+    color: theme.colors.textPrimary,
 });
 
-export namespace Menu {
-    export interface Props{
-        title?: string,
-        targetAddress?: string,
-        pushToTarget?: void,
-        actions?: typeof RoutesActions;
-    }
+type Props = {
+    title?: string;
+    targetAddress?: string;
+    pushToTarget?: void;
+    actions?: typeof RoutesActions;
+};
 
-    export interface State {
-        activeRoutePath: string
-    }
-}
+type State = {
+    activeRoutePath: string;
+};
 
-export default class Menu extends React.Component<Menu.Props, Menu.State> {
+export default class Menu extends React.Component<Props, State> {
 
-    constructor(props) {
+    constructor(props: Props) {
         super(props);
     }
 
@@ -38,4 +36,3 @@ export default class Menu extends React.Component<Menu.Props, Menu.State> {
         );
     }
 }
-

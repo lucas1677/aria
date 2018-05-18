@@ -1,22 +1,20 @@
 import * as React from 'react';
-import {style} from "typestyle";
-import MainWorkSpace from "./MainWorkSpace";
-import LeftNavBar from "./LeftNavBar";
+import {style} from 'typestyle';
+import LeftNavBar from './LeftNavBar';
+import MainWorkSpace from './MainWorkSpace';
 
-const componentBaseStyle = style({
-});
+const componentBaseStyle = style({});
 
-type AppProps = {
-}
-type AppStates = {}
+type AppProps = {};
+type AppStates = {};
 
 export default class MainSpaceWrapper extends React.Component<AppProps, AppStates> {
-    constructor(props) {
+    constructor(props: AppProps) {
         super(props);
     }
 
-    componentDidCatch(error, info) {
-
+    componentDidCatch(error: any, info: any) {
+        return null;
     }
 
     render(): React.ReactNode {

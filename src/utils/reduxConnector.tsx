@@ -1,9 +1,10 @@
-import * as React from "react";
+import * as React from 'react';
 import {
     connect as originalConnect, MapDispatchToPropsParam, MapStateToPropsParam, MergeProps, Options
-} from "react-redux";
+} from 'react-redux';
 
-export type InferableComponentEnhancerWithProps<TInjectedProps, TNeedsProps> = <TComponent extends React.ComponentType<TInjectedProps & TNeedsProps>>(component: TComponent) => TComponent;
+export type InferableComponentEnhancerWithProps<TInjectedProps, TNeedsProps> =
+    <TComponent extends React.ComponentType<TInjectedProps & TNeedsProps>>(component: TComponent) => TComponent;
 
 interface MyConnect {
     <TStateProps = {}, TDispatchProps = {}, TOwnProps = {}>(

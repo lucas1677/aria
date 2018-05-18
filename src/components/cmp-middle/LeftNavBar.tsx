@@ -1,20 +1,20 @@
 import * as React from 'react';
-import {style} from "typestyle";
+import {style} from 'typestyle';
 
 const componentBaseStyle = style({
     backgroundColor: '#BBB',
 });
 
-type AppProps = {}
-type AppStates = {}
+type AppProps = {};
+type AppStates = {};
 
 export default class LeftNavBar extends React.Component<AppProps, AppStates> {
-    constructor(props) {
+    constructor(props: AppProps) {
         super(props);
     }
 
-    componentDidCatch(error, info) {
-
+    componentDidCatch(error: any, info: any) {
+        return null;
     }
 
     render(): React.ReactNode {

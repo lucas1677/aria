@@ -1,9 +1,9 @@
 declare interface PathParam {
-    path: string,
-    newTab?: boolean
-    newWindow?: boolean
+    path: string;
+    newTab?: boolean;
+    newWindow?: boolean;
 }
 
 declare interface ApplicationState {
-    currentRoutePath: string
+    currentRoutePath: string;
 }
