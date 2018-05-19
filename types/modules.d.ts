@@ -8,12 +8,6 @@ declare interface ApplicationState {
     currentRoutePath: string;
 }
 
-declare module '*.svg' {
-    const content: any;
-    export default content;
-}
+declare module '*.svg';
 
-declare module '*.css' {
-    const content: any;
-    export default content;
-}
+declare module '*.css';

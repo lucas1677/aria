@@ -11,8 +11,8 @@
     "url": "git@gitee.com:arias-education/haitang-edu-platform-fe.git"
   },
   "scripts": {
+    "start": "yarn dev",
     "dev": "webpack-dashboard -m -- webpack-dev-server --port 3168 --open --debug --devtool cheap-module-source-map --output-pathinfo --history-api-fallback --hot --inline --progress --colors",
-    "start": "webpack-dev-server --port 3168 --open --debug --devtool cheap-module-source-map --output-pathinfo --history-api-fallback --hot --inline --progress --colors",
     "build": "webpack -p --progress --colors",
     "lint": "tslint -c tslint.json 'src/**/*.{ts,tsx}'",
     "test": "jest"

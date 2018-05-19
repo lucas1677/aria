@@ -1,5 +1,5 @@
 import * as RoutesActions from '@src/actions/routes';
-import logo from '@src/resource/image/logo.svg';
+import * as logo from '@src/resource/image/logo.svg';
 import * as theme from '@src/theme/const';
 import * as React from 'react';
 import {style} from 'typestyle';
