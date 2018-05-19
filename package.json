@@ -11,9 +11,9 @@
     "url": "git@gitee.com:arias-education/haitang-edu-platform-fe.git"
   },
   "scripts": {
+    "dev": "webpack-dashboard -m -- webpack-dev-server --port 3168 --open --debug --devtool cheap-module-source-map --output-pathinfo --history-api-fallback --hot --inline --progress --colors",
     "start": "webpack-dev-server --port 3168 --open --debug --devtool cheap-module-source-map --output-pathinfo --history-api-fallback --hot --inline --progress --colors",
     "build": "webpack -p --progress --colors",
-    "dev:dashboard": "webpack-dashboard -m -- webpack-dev-server --config webpack.config.js --open",
     "lint": "tslint -c tslint.json 'src/**/*.{ts,tsx}'",
     "test": "jest"
   },
@@ -67,6 +67,7 @@
     "clean-webpack-plugin": "^0.1.17",
     "css-loader": "^0.28.11",
     "express": "^4.16.2",
+    "file-loader": "^1.1.11",
     "html-loader": "^0.5.4",
     "html-webpack-plugin": "^2.30.1",
     "jest": "^22.0.1",

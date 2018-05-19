@@ -1,6 +1,7 @@
 const webpack = require('webpack');
 const Path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const DashboardPlugin = require('webpack-dashboard/plugin');
 
 const isProduction = process.argv.indexOf('-p') >= 0;
 const outPath = Path.join(__dirname, './dist');
@@ -41,9 +42,11 @@ module.exports = {
                     'ts-loader'
                 ]
         }, {
-            test: /\.css$/, loader: 'typings-for-css-modules?modules'
-        }, {
-            test: /\.scss$/, loader: 'typings-for-css-modules?modules&sass'
+            test: /\.css$/,
+            use: [
+                'style-loader',
+                'css-loader'
+            ]
         }, {
             test: /\.html$/,
             loader:
@@ -76,6 +79,7 @@ module.exports = {
         ],
     },
     plugins: [
+        new DashboardPlugin(),
         new webpack.DefinePlugin({
             'process.env.NODE_ENV': isProduction === true ? JSON.stringify('production') : JSON.stringify('development')
         }),

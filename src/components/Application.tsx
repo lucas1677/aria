@@ -1,8 +1,5 @@
-import {normalizeString} from '@src/constants/global';
 import * as React from 'react';
-import {cssRaw, style} from 'typestyle';
-
-cssRaw(`${normalizeString}`);
+import {style} from 'typestyle';
 
 const pageWrapper = style({
     backgroundColor: '#BBB',

@@ -4,15 +4,13 @@ import * as ReactDom from 'react-dom';
 import {createHashHistory as createHistory} from 'history';
 import {Provider} from 'react-redux';
 import {Route} from 'react-router';
-import {ConnectedRouter, push, routerMiddleware, routerReducer} from 'react-router-redux';
+import {ConnectedRouter, routerMiddleware, routerReducer} from 'react-router-redux';
 import {applyMiddleware, combineReducers, createStore} from 'redux';
 
-import Application from '@src/components/Application';
-import Footer from '@src/components/cmp-bottom/Footer';
-import HomePageMid from '@src/components/cmp-middle/HomePageMid';
-import MainSpaceWrapper from '@src/components/cmp-middle/MainSpaceWrapper';
-import TopNavBar from '@src/components/cmp-top/TopNavBar';
+import TodoApp from '@src/components/todo-app/TodoApp';
+import normalizeStyle from '@src/resource/css/normalize.css';
 import reducers from '@src/reducers';
+import {cssRaw} from 'typestyle';
 
 // Create a history of your choosing (we're using a browser history in this case)
 const history = createHistory();
@@ -30,18 +28,22 @@ const store = createStore(
     applyMiddleware(middleware)
 );
 
+cssRaw(`${normalizeStyle}`);
+
+const state = {
+    todos: [
+        {id: 1, name: 'Render static UI', isComplete: true},
+        {id: 2, name: 'Create initial state', isComplete: true},
+        {id: 3, name: 'Render based on state', isComplete: true},
+    ],
+};
+
 ReactDom.render(
     <Provider store={store}>
         <ConnectedRouter history={history}>
-            <div>
-                <Application>
-                    <TopNavBar/>
-                    <span onClick={() => store.dispatch(push('/'))}>22</span>
-                    <Route exact path="/" component={HomePageMid}/>
-                    <Route path="/teach-app" component={MainSpaceWrapper}/>
-                    <Footer/>
-                </Application>
-            </div>
+            <Route path={'/'}>
+                <TodoApp todos={state.todos}/>
+            </Route>
         </ConnectedRouter>
     </Provider>,
     document.getElementById('root') as HTMLElement

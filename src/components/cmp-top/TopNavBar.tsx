@@ -36,7 +36,7 @@ class TopNavBar extends React.Component<Props> {
             <div className={componentBaseStyle}>
                 <img className={appLogoImage} src={'image/app-logo.png'} alt="app-logo"/>
                 <div className={appLogoText}>
-                    麦极创客22
+                    麦极创客23
                 </div>
                 <div className={appLogoText}>
                     <BookIcon/>
