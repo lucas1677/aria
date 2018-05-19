@@ -52,6 +52,7 @@ export default class TodoApp extends React.Component<Props, State> {
                         <ul>
                             {this.props.todos.map(todo => (
                                 <li key={todo.id}>
+                                    223
                                     <input type="checkbox" defaultChecked={todo.isComplete}/> {todo.name}
                                 </li>
                             ))}

@@ -1,7 +1,7 @@
 const webpack = require('webpack');
 const Path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
 const DashboardPlugin = require('webpack-dashboard/plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const isProduction = process.argv.indexOf('-p') >= 0;
 const outPath = Path.join(__dirname, './dist');
@@ -20,10 +20,22 @@ module.exports = {
             'redux'
         ],
     },
+    optimization: {
+        splitChunks: {
+            cacheGroups: {
+                vendor: {
+                    chunks: "initial",
+                    test: "vendor",
+                    name: "vendor",
+                    enforce: true
+                }
+            }
+        }
+    },
     output: {
         path: outPath,
         publicPath: '/',
-        filename: 'bundle.js'
+        pathinfo: true
     },
     target: "web",
     resolve: {
@@ -88,17 +100,13 @@ module.exports = {
         }
         ],
     },
-    plugins: [
-        new DashboardPlugin(),
-        new webpack.optimize.CommonsChunkPlugin({
-            name: 'vendor',
-            filename: 'vendor.bundle.js',
-            minChunks: Infinity
-        }),
+    plugins: isProduction ? [
         new webpack.optimize.AggressiveMergingPlugin(),
-        new HtmlWebpackPlugin({
-            template: 'index.html',
-        }),
+        new HtmlWebpackPlugin({template: 'index.html'})
+    ] : [
+        new webpack.optimize.AggressiveMergingPlugin(),
+        new HtmlWebpackPlugin({template: 'index.html'}),
+        new DashboardPlugin()
     ],
     devServer:
         {
