@@ -8,8 +8,8 @@ import {ConnectedRouter, routerMiddleware, routerReducer} from 'react-router-red
 import {applyMiddleware, combineReducers, createStore} from 'redux';
 
 import TodoApp from '@src/components/todo-app/TodoApp';
-import normalizeStyle from '@src/resource/css/normalize.css';
 import reducers from '@src/reducers';
+import normalizeStyle from '@src/resource/css/normalize.css';
 import {cssRaw} from 'typestyle';
 
 // Create a history of your choosing (we're using a browser history in this case)

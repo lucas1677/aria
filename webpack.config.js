@@ -8,6 +8,7 @@ const outPath = Path.join(__dirname, './dist');
 const sourcePath = Path.join(__dirname, './src');
 
 module.exports = {
+    mode: isProduction ? "production" : "development",
     context: sourcePath,
     entry: {
         main: './index.tsx',
@@ -17,7 +18,7 @@ module.exports = {
             'react-redux',
             'react-router',
             'redux'
-        ]
+        ],
     },
     output: {
         path: outPath,
@@ -52,10 +53,19 @@ module.exports = {
             loader:
                 'html-loader'
         }, {
-            test: /\.(png|svg|jpg|gif)$/,
-            use:
-                [
-                    'file-loader'
+            test: /\.(pdf|jpg|png|gif|svg|ico)$/,
+            use: isProduction
+                ? [
+                    {
+                        loader: 'file-loader',
+                        options: {
+                            name: '[path][name]-[hash:8].[ext]'
+                        },
+                    },
+                ] : [
+                    {
+                        loader: 'url-loader'
+                    },
                 ]
         }, {
             test: /\.(woff|woff2|eot|ttf|otf)$/,
@@ -80,9 +90,6 @@ module.exports = {
     },
     plugins: [
         new DashboardPlugin(),
-        new webpack.DefinePlugin({
-            'process.env.NODE_ENV': isProduction === true ? JSON.stringify('production') : JSON.stringify('development')
-        }),
         new webpack.optimize.CommonsChunkPlugin({
             name: 'vendor',
             filename: 'vendor.bundle.js',
