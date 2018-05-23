@@ -7,8 +7,7 @@
   "license": "MIT",
   "main": "dist/bundle.js",
   "repository": {
-    "type": "git",
-    "url": "git@gitee.com:arias-education/haitang-edu-platform-fe.git"
+    "type": "git"
   },
   "scripts": {
     "start": "yarn dev",

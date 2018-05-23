@@ -9,6 +9,8 @@ import {applyMiddleware, combineReducers, createStore} from 'redux';
 
 import TodoApp from '@src/components/todo-app/TodoApp';
 import reducers from '@src/reducers';
+import mainStyle from '@src/resource/css/main.css';
+
 import normalizeStyle from '@src/resource/css/normalize.css';
 import {cssRaw} from 'typestyle';
 
@@ -28,7 +30,11 @@ const store = createStore(
     applyMiddleware(middleware)
 );
 
-cssRaw(`${normalizeStyle}`);
+// import global css style: normalize & main style sheet.
+cssRaw(`
+${normalizeStyle}
+${mainStyle}
+`);
 
 const state = {
     todos: [

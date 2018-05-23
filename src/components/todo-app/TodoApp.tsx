@@ -1,15 +1,10 @@
 import * as RoutesActions from '@src/actions/routes';
 import * as logo from '@src/resource/image/logo.svg';
-import * as theme from '@src/theme/const';
 import * as React from 'react';
 import {style} from 'typestyle';
 
 const componentBaseStyle = style({
-    backgroundColor: theme.colors.primary,
-    height: '100vh',
-    color: theme.colors.textPrimary,
-    paddingTop: '20px',
-    display: 'inline-block',
+    marginTop: '20px',
     textAlign: 'left',
 });
 
@@ -52,7 +47,6 @@ export default class TodoApp extends React.Component<Props, State> {
                         <ul>
                             {this.props.todos.map(todo => (
                                 <li key={todo.id}>
-                                    223
                                     <input type="checkbox" defaultChecked={todo.isComplete}/> {todo.name}
                                 </li>
                             ))}
