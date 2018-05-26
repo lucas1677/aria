@@ -4,6 +4,7 @@ const DashboardPlugin = require('webpack-dashboard/plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const isProduction = process.argv.indexOf('-p') >= 0;
+const isDev = process.argv.indexOf('-dev') >= 0;
 const outPath = Path.join(__dirname, './dist');
 const sourcePath = Path.join(__dirname, './src');
 
@@ -100,7 +101,7 @@ module.exports = {
         }
         ],
     },
-    plugins: isProduction ? [
+    plugins: isProduction || !isDev ? [
         new webpack.optimize.AggressiveMergingPlugin(),
         new HtmlWebpackPlugin({template: 'index.html'})
     ] : [
