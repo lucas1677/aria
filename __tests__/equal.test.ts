@@ -9,8 +9,8 @@ const counter = (state = 0, action) => {
     }
 };
 
-describe("test simple reducer function", () => {
-    it("test1", () => {
+describe('test simple reducer function', () => {
+    it('test1', () => {
         expect(
             counter(0, {type: 'INCREMENT'})
         ).toEqual(1);
@@ -34,7 +34,7 @@ describe("test simple reducer function", () => {
         expect(
             counter(undefined, {})
         ).toEqual(0);
-    })
+    });
 });
 
 

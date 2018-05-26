@@ -1,12 +1,9 @@
-import * as RoutesActions from '@src/actions/routes';
-import * as logo from '@src/resource/image/logo.svg';
 import * as React from 'react';
-import {style} from 'typestyle';
 
-const componentBaseStyle = style({
-    marginTop: '20px',
-    textAlign: 'left',
-});
+import TodoForm from '@src/demo-todo-app/components/TodoForm';
+import TodoList from '@src/demo-todo-app/components/TodoList';
+import * as RoutesActions from '../../actions/routes';
+import * as logo from '../../resource/image/logo.svg';
 
 type Props = {
     title?: string;
@@ -39,19 +36,9 @@ export default class TodoApp extends React.Component<Props, State> {
                     <img src={logo} className="App-logo" alt="logo"/>
                     <h1 className="App-title">Welcome to React with redux</h1>
                 </header>
-                <div className={componentBaseStyle}>
-                    <form>
-                        <input type="text"/>
-                    </form>
-                    <div className="Todo-list">
-                        <ul>
-                            {this.props.todos.map(todo => (
-                                <li key={todo.id}>
-                                    <input type="checkbox" defaultChecked={todo.isComplete}/> {todo.name}
-                                </li>
-                            ))}
-                        </ul>
-                    </div>
+                <div>
+                    <TodoForm/>
+                    <TodoList todos={this.props.todos}/>
                 </div>
             </div>
         );

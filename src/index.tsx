@@ -7,7 +7,7 @@ import {Route} from 'react-router';
 import {ConnectedRouter, routerMiddleware, routerReducer} from 'react-router-redux';
 import {applyMiddleware, combineReducers, createStore} from 'redux';
 
-import TodoApp from '@src/components/todo-app/TodoApp';
+import TodoApp from '@src/demo-todo-app/components/TodoApp';
 import reducers from '@src/reducers';
 import mainStyle from '@src/resource/css/main.css';
 

@@ -12,6 +12,7 @@
     height: 150px;
     padding: 20px;
     color: white;
+    margin-bottom: 30px;
 }
 
 .App-title {
@@ -33,12 +34,19 @@
     text-align: left;
 }
 
-input {
+.Todo-list {
+    width: 400px;
+    margin: 0 auto;
+}
+
+form>input {
     font-size: 20px;
+    width: 400px;
 }
 
 ul {
     padding: 0;
+    text-align: left;
 }
 
 li {

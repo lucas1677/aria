@@ -25,7 +25,7 @@
     "transform": {
       "\\.(ts|tsx)$": "<rootDir>/node_modules/ts-jest/preprocessor.js"
     },
-    "testRegex": "/__tests__/.*\\.(ts|tsx|js)$"
+    "testRegex": "(/src/|/__tests__/).*\\.(spec|test)\\.(ts|tsx|js)$"
   },
   "dependencies": {
     "classnames": "^2.2.5",
