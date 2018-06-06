@@ -9,8 +9,9 @@ import {applyMiddleware, combineReducers, createStore} from 'redux';
 
 import TodoApp from '@src/demo-todo-app/components/TodoApp';
 import reducers from '@src/reducers';
-import mainStyle from '@src/resource/css/main.css';
+import store from '@src/store';
 
+import mainStyle from '@src/resource/css/main.css';
 import normalizeStyle from '@src/resource/css/normalize.css';
 import {cssRaw} from 'typestyle';
 

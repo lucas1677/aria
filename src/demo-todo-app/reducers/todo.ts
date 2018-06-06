@@ -5,5 +5,10 @@ const initState: TodoAppState = {
 };
 
 export default (state: TodoAppState = initState, action) => {
-    return state;
+    switch (action.type) {
+        case 'TODO_ADD':
+            return {...state, todos: state.todos.concat(action.payload)};
+        default:
+            return state;
+    }
 };
