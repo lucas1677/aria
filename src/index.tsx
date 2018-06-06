@@ -29,14 +29,11 @@ const actions = bindActionCreators({
 }, store.dispatch);
 
 const render = () => {
-    const state = store.getState();
     ReactDom.render(
         <Provider store={store}>
             <ConnectedRouter history={history}>
                 <Route path={'/'}>
                     <TodoApp
-                        todos={state.todos}
-                        currentTodo={state.currentTodo}
                         changeCurrent={actions.updateCurrent}
                     />
                 </Route>

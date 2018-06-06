@@ -6,14 +6,15 @@ import TodoForm from '@src/demo-todo-app/components/TodoForm';
 import TodoList from '@src/demo-todo-app/components/TodoList';
 
 import * as logo from '@src/resource/image/logo.svg';
+import {connect} from 'react-redux';
 
 type Props = {
     title?: string;
     targetAddress?: string;
     pushToTarget?: void;
     actions?: typeof RoutesActions;
-    todos: TodoItem[];
-    currentTodo: string;
+    todos?: TodoItem[];
+    currentTodo?: string;
     changeCurrent: (val: any) => void;
 };
 
@@ -27,7 +28,7 @@ type State = {
     activeRoutePath: string;
 };
 
-export default class TodoApp extends React.Component<Props, State> {
+class TodoApp extends React.Component<Props, State> {
 
     constructor(props: Props) {
         super(props);
@@ -51,3 +52,7 @@ export default class TodoApp extends React.Component<Props, State> {
         );
     }
 }
+
+const mapStateToProps = (state) => state;
+const ConnectedTodoApp = connect(mapStateToProps)(TodoApp);
+export default ConnectedTodoApp;
