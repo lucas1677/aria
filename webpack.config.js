@@ -44,7 +44,10 @@ module.exports = {
         // Fix webpack's default behavior to not load packages with jsnext:main module
         // https://github.com/Microsoft/TypeScript/issues/11677
         mainFields: ['browser', 'main'],
-        alias: {'@src': Path.join(__dirname, 'src')}
+        alias: {
+            '@src': Path.join(__dirname, 'src'),
+            '@root': Path.join(__dirname, '')
+        }
     },
     module: {
         rules: [{

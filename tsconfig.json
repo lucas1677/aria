@@ -2,7 +2,8 @@
   "compilerOptions": {
     "baseUrl": "./", // enables absolute path imports
     "paths": { // define absolute path mappings
-      "@src/*": ["src/*"] // will enable -> import { ... } from '@src/components'
+      "@src/*": ["src/*"], // will enable -> import { ... } from '@src/components'
+      "@root/*": ["/*"]
       // in webpack you need to add -> resolve: { alias: { '@src': PATH_TO_SRC } }
     },
     "outDir": "build", // target for compiled files
@@ -23,7 +24,7 @@
       "dom"
     ],
     "typeRoots": [
-      "./types",
+      "./src/types",
       "./node_modules/@types"
     ],
     "target": "es5", // "es2015" for ES6+ engines
@@ -43,6 +44,7 @@
   "exclude": [
     "dist",
     "build",
+    "**/*.test.*",
     "src/**/*.spec.*",
     "__tests__",
     "node_modules"
