@@ -1,9 +1,11 @@
 import * as React from 'react';
 
+import * as RoutesActions from '@src/actions/routes';
+
 import TodoForm from '@src/demo-todo-app/components/TodoForm';
 import TodoList from '@src/demo-todo-app/components/TodoList';
-import * as RoutesActions from '../../actions/routes';
-import * as logo from '../../resource/image/logo.svg';
+
+import * as logo from '@src/resource/image/logo.svg';
 
 type Props = {
     title?: string;
