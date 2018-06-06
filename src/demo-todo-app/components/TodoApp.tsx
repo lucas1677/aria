@@ -1,6 +1,8 @@
 import * as React from 'react';
 
 import * as RoutesActions from '@src/actions/routes';
+import {updateCurrent} from '@src/demo-todo-app/reducers/todo';
+import {bindActionCreators} from 'redux';
 
 import TodoForm from '@src/demo-todo-app/components/TodoForm';
 import TodoList from '@src/demo-todo-app/components/TodoList';
@@ -15,7 +17,7 @@ type Props = {
     actions?: typeof RoutesActions;
     todos?: TodoItem[];
     currentTodo?: string;
-    changeCurrent: (val: any) => void;
+    updateCurrent?: (val: any) => void;
 };
 
 type TodoItem = {
@@ -44,7 +46,7 @@ class TodoApp extends React.Component<Props, State> {
                 <div>
                     <TodoForm
                         currentTodo={this.props.currentTodo}
-                        changeCurrent={this.props.changeCurrent}
+                        changeCurrent={this.props.updateCurrent}
                     />
                     <TodoList todos={this.props.todos}/>
                 </div>
@@ -54,5 +56,7 @@ class TodoApp extends React.Component<Props, State> {
 }
 
 const mapStateToProps = (state) => state;
-const ConnectedTodoApp = connect(mapStateToProps)(TodoApp);
+const mapDispatchToProps = (dispatch) =>
+    bindActionCreators({updateCurrent}, dispatch);
+const ConnectedTodoApp = connect(mapStateToProps, mapDispatchToProps)(TodoApp);
 export default ConnectedTodoApp;
