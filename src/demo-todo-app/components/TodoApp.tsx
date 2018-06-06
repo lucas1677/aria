@@ -13,6 +13,8 @@ type Props = {
     pushToTarget?: void;
     actions?: typeof RoutesActions;
     todos: TodoItem[];
+    currentTodo: string;
+    changeCurrent: (val: any) => void;
 };
 
 type TodoItem = {
@@ -39,7 +41,10 @@ export default class TodoApp extends React.Component<Props, State> {
                     <h1 className="App-title">Welcome to React with redux</h1>
                 </header>
                 <div>
-                    <TodoForm/>
+                    <TodoForm
+                        currentTodo={this.props.currentTodo}
+                        changeCurrent={this.props.changeCurrent}
+                    />
                     <TodoList todos={this.props.todos}/>
                 </div>
             </div>

@@ -22,13 +22,22 @@ ${normalizeStyle}
 ${mainStyle}
 `);
 
+const todoChangeHandler = (val) => store.dispatch({
+    type: 'CURRENT_UPDATE',
+    payload: val,
+});
+
 const render = () => {
     const state = store.getState();
     ReactDom.render(
         <Provider store={store}>
             <ConnectedRouter history={history}>
                 <Route path={'/'}>
-                    <TodoApp {...state}/>
+                    <TodoApp
+                        todos={state.todos}
+                        currentTodo={state.currentTodo}
+                        changeCurrent={todoChangeHandler}
+                    />
                 </Route>
             </ConnectedRouter>
         </Provider>,
@@ -39,14 +48,3 @@ const render = () => {
 render();
 
 store.subscribe(render);
-
-setInterval(() => {
-    store.dispatch({
-        type: 'TODO_ADD',
-        payload: {
-            id: new Date(),
-            name: 'New Todo',
-            isComplete: false,
-        },
-    });
-}, 1000);
