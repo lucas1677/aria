@@ -45,8 +45,7 @@ module.exports = {
         // https://github.com/Microsoft/TypeScript/issues/11677
         mainFields: ['browser', 'main'],
         alias: {
-            '@src': Path.join(__dirname, 'src'),
-            '@root': Path.join(__dirname, '')
+            '@src': Path.join(__dirname, 'src')
         }
     },
     module: {

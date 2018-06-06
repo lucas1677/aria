@@ -2,8 +2,7 @@
   "compilerOptions": {
     "baseUrl": "./", // enables absolute path imports
     "paths": { // define absolute path mappings
-      "@src/*": ["src/*"], // will enable -> import { ... } from '@src/components'
-      "@root/*": ["/*"]
+      "@src/*": ["src/*"] // will enable -> import { ... } from '@src/components'
       // in webpack you need to add -> resolve: { alias: { '@src': PATH_TO_SRC } }
     },
     "outDir": "build", // target for compiled files

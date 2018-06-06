@@ -11,7 +11,7 @@
   },
   "scripts": {
     "start": "webpack-dev-server --port 3168 --open --debug --devtool cheap-module-source-map --output-pathinfo --history-api-fallback --hot --inline --progress --colors",
-    "dev": "webpack-dashboard -m -dev -- webpack-dev-server --port 3168 --open --debug --devtool cheap-module-source-map --output-pathinfo --history-api-fallback --hot --inline --progress --colors",
+    "dev": "webpack-dashboard -m -- webpack-dev-server --port 3168 --open --debug -dev --devtool cheap-module-source-map --output-pathinfo --history-api-fallback --hot --inline --progress --colors",
     "build": "webpack -p --progress --colors",
     "lint": "tslint -c tslint.json 'src/**/*.{ts,tsx}'",
     "test": "jest"
