@@ -5,6 +5,7 @@ import {createHashHistory as createHistory} from 'history';
 import {Provider} from 'react-redux';
 import {Route} from 'react-router';
 import {ConnectedRouter} from 'react-router-redux';
+import {bindActionCreators} from 'redux';
 
 import TodoApp from '@src/demo-todo-app/components/TodoApp';
 import {updateCurrent} from '@src/demo-todo-app/reducers/todo';
@@ -23,7 +24,9 @@ ${normalizeStyle}
 ${mainStyle}
 `);
 
-const todoChangeHandler = (val) => store.dispatch(updateCurrent(val));
+const actions = bindActionCreators({
+    updateCurrent,
+}, store.dispatch);
 
 const render = () => {
     const state = store.getState();
@@ -34,7 +37,7 @@ const render = () => {
                     <TodoApp
                         todos={state.todos}
                         currentTodo={state.currentTodo}
-                        changeCurrent={todoChangeHandler}
+                        changeCurrent={actions.updateCurrent}
                     />
                 </Route>
             </ConnectedRouter>
