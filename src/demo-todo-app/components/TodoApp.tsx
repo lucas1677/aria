@@ -57,6 +57,8 @@ class TodoApp extends React.Component<Props, State> {
 
 const mapStateToProps = (state) => state;
 const mapDispatchToProps = (dispatch) =>
-    bindActionCreators({updateCurrent}, dispatch);
+    bindActionCreators({
+        updateCurrent,
+    }, dispatch);
 const ConnectedTodoApp = connect(mapStateToProps, mapDispatchToProps)(TodoApp);
 export default ConnectedTodoApp;
