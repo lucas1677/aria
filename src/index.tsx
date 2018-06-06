@@ -7,6 +7,7 @@ import {Route} from 'react-router';
 import {ConnectedRouter} from 'react-router-redux';
 
 import TodoApp from '@src/demo-todo-app/components/TodoApp';
+import {updateCurrent} from '@src/demo-todo-app/reducers/todo';
 import store from '@src/store';
 
 import mainStyle from '@src/resource/css/main.css';
@@ -22,10 +23,7 @@ ${normalizeStyle}
 ${mainStyle}
 `);
 
-const todoChangeHandler = (val) => store.dispatch({
-    type: 'CURRENT_UPDATE',
-    payload: val,
-});
+const todoChangeHandler = (val) => store.dispatch(updateCurrent(val));
 
 const render = () => {
     const state = store.getState();
