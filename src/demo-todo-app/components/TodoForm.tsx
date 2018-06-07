@@ -1,10 +1,15 @@
 import * as React from 'react';
+import {connect} from 'react-redux';
+import {bindActionCreators} from 'redux';
 
-export default (props) => {
-    const {currentTodo, changeCurrent} = props;
+import {updateCurrent} from '@src/demo-todo-app/reducers/todo';
+
+const TodoForm = (props) => {
+    console.log('Rendering form');
+    const {currentTodo, updateValue} = props;
     const handleInputChange = (evt) => {
         const val = evt.target.value;
-        changeCurrent(val);
+        updateValue(val);
     };
     return (
         <form>
@@ -15,3 +20,11 @@ export default (props) => {
         </form>
     );
 };
+
+const mapS2P = (state) => ({
+    currentTodo: state.currentTodo,
+});
+const mapD2P = (dispatch) => bindActionCreators({
+    updateValue: updateCurrent,
+}, dispatch);
+export default connect(mapS2P, mapD2P)(TodoForm);

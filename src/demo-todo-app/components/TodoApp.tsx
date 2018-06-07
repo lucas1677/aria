@@ -1,14 +1,11 @@
 import * as React from 'react';
 
 import * as RoutesActions from '@src/actions/routes';
-import {updateCurrent} from '@src/demo-todo-app/reducers/todo';
-import {bindActionCreators} from 'redux';
 
 import TodoForm from '@src/demo-todo-app/components/TodoForm';
 import TodoList from '@src/demo-todo-app/components/TodoList';
 
 import * as logo from '@src/resource/image/logo.svg';
-import {connect} from 'react-redux';
 
 type Props = {
     title?: string;
@@ -44,24 +41,12 @@ class TodoApp extends React.Component<Props, State> {
                     <h1 className="App-title">Welcome to React with redux</h1>
                 </header>
                 <div>
-                    <TodoForm
-                        currentTodo={this.props.currentTodo}
-                        changeCurrent={this.props.updateCurrent}
-                    />
-                    <TodoList todos={this.props.todos}/>
+                    <TodoForm />
+                    <TodoList />
                 </div>
             </div>
         );
     }
 }
 
-const mapStateToProps = (state) => state;
-const mapDispatchToProps = (dispatch) =>
-    bindActionCreators({
-        updateCurrent,
-    }, dispatch);
-
-// TODO this should use short hand write, but type check failed.
-// TODO consider to define a new typedefine for connect, or try to update @types/react-redux
-const ConnectedTodoApp = connect(mapStateToProps, mapDispatchToProps)(TodoApp);
-export default ConnectedTodoApp;
+export default TodoApp;
