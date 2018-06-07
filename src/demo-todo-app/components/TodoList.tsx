@@ -1,7 +1,7 @@
 import * as React from 'react';
 import {connect} from 'react-redux';
 
-import {TodoItemState} from '@src/types/todoApp';
+import {TodoAppState, TodoItemState} from '@src/types/todoApp';
 
 const TodoItem = ({id, isComplete, name}) => (
   <li>
@@ -26,8 +26,9 @@ class TodoList extends React.Component<PropsType> {
   }
 }
 
-const mapS2P = (state) => ({
-  todos: state.todos,
-});
-
-export default connect(mapS2P)(TodoList);
+export default connect(
+  (state: TodoAppState) =>
+    ({
+      todos: state.todos,
+    })
+)(TodoList);
