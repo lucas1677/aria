@@ -35,6 +35,7 @@
     "noImplicitReturns": true,
     "noImplicitThis": true,
     "noUnusedLocals": true,
+    "strictNullChecks": false,
     "strict": true,
     "pretty": true,
     "removeComments": true,
