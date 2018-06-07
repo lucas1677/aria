@@ -5,7 +5,6 @@ import {bindActionCreators} from 'redux';
 import {updateCurrent} from '@src/demo-todo-app/reducers/todo';
 
 const TodoForm = (props) => {
-    console.log('Rendering form');
     const {currentTodo, updateValue} = props;
     const handleInputChange = (evt) => {
         const val = evt.target.value;

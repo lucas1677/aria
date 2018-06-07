@@ -1,0 +1,28 @@
+{
+  "todos": [
+    {
+      "id": 1,
+      "name": "Render static UI",
+      "isComplete": true
+    },
+    {
+      "id": 2,
+      "name": "Create initial state",
+      "isComplete": true
+    },
+    {
+      "id": 3,
+      "name": "Render based on state",
+      "isComplete": true
+    },
+    {
+      "id": 4,
+      "name": "Add json-server to project",
+      "isComplete": true
+    },{
+      "id": 5,
+      "name": "Use redux-thunk middleware to get data",
+      "isComplete": false
+    }
+  ]
+}

@@ -8,7 +8,7 @@ const TodoItem = ({id, isComplete, name}) => (
     </li>
 );
 
-const TodoList = (props) => console.log('List rendering') || (
+const TodoList = (props) => (
     <div className="Todo-list">
         <ul>
             {props.todos.map(todo => <TodoItem key={todo.id} {...todo}/>)}

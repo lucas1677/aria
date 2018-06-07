@@ -12,6 +12,7 @@
   "scripts": {
     "start": "webpack-dev-server --port 3168 --open --debug --devtool cheap-module-source-map --output-pathinfo --history-api-fallback --hot --inline --progress --colors",
     "dev": "webpack-dashboard -m -- webpack-dev-server --port 3168 --open --debug -dev --devtool cheap-module-source-map --output-pathinfo --history-api-fallback --hot --inline --progress --colors",
+    "json-server": "json-server -p 8080 src/resource/data/db.json",
     "build": "webpack -p --progress --colors",
     "lint": "tslint -c tslint.json 'src/**/*.{ts,tsx}'",
     "test": "jest"
@@ -29,6 +30,7 @@
   },
   "dependencies": {
     "classnames": "^2.2.5",
+    "json-server": "^0.13.0",
     "normalizr": "^3.2.4",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
@@ -41,7 +43,7 @@
     "redux": "^3.7.2",
     "redux-actions": "^2.2.1",
     "redux-logger": "^3.0.6",
-    "redux-thunk": "^2.2.0",
+    "redux-thunk": "^2.3.0",
     "tinycolor2": "^1.4.1",
     "tslib": "^1.9.0",
     "typescript": "^2.6.2",
