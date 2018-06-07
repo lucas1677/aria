@@ -60,5 +60,8 @@ const mapDispatchToProps = (dispatch) =>
     bindActionCreators({
         updateCurrent,
     }, dispatch);
+
+// TODO this should use short hand write, but type check failed.
+// TODO consider to define a new typedefine for connect, or try to update @types/react-redux
 const ConnectedTodoApp = connect(mapStateToProps, mapDispatchToProps)(TodoApp);
 export default ConnectedTodoApp;
