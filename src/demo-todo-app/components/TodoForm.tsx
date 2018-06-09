@@ -20,8 +20,11 @@ const TodoForm = (props) => {
   );
 };
 
-export default connect((state: TodoAppState) => ({
-  currentTodo: state.currentTodo,
-}), {
-  updateValue: updateCurrent,
-})(TodoForm);
+export default connect(
+  (state: TodoAppState) => ({
+    currentTodo: state.currentTodo,
+  }),
+  {
+    updateValue: updateCurrent,
+  }
+)(TodoForm);

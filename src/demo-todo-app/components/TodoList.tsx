@@ -1,6 +1,7 @@
 import * as React from 'react';
 import {connect} from 'react-redux';
 
+import {fetchTodos} from '@src/demo-todo-app/reducers/todo';
 import {TodoAppState, TodoItemState} from '@src/types/todoApp';
 
 const TodoItem = ({id, isComplete, name}) => (
@@ -12,9 +13,14 @@ const TodoItem = ({id, isComplete, name}) => (
 
 type PropsType = {
   todos: TodoItemState[];
+  fetchTodos: () => any;
 };
 
 class TodoList extends React.Component<PropsType> {
+  componentDidMount() {
+    this.props.fetchTodos();
+  }
+
   render() {
     return (
       <div className="Todo-list">
@@ -27,8 +33,10 @@ class TodoList extends React.Component<PropsType> {
 }
 
 export default connect(
-  (state: TodoAppState) =>
-    ({
-      todos: state.todos,
-    })
+  (state: TodoAppState) => ({
+    todos: state.todos,
+  }),
+  {
+    fetchTodos: fetchTodos,
+  }
 )(TodoList);
