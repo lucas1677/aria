@@ -19,10 +19,21 @@
       "id": 4,
       "name": "Add json-server to project",
       "isComplete": true
-    },{
+    },
+    {
       "id": 5,
       "name": "Use redux-thunk middleware to get data",
       "isComplete": false
+    },
+    {
+      "name": "222",
+      "isComplete": false,
+      "id": 6
+    },
+    {
+      "name": "3333",
+      "isComplete": false,
+      "id": 7
     }
   ]
 }

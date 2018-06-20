@@ -119,9 +119,9 @@
   version "3.6.31"
   resolved "http://registry.npm.taobao.org/@types/redux/download/@types/redux-3.6.31.tgz#40eafa7575db36b912ce0059b85de98c205b0708"
 
-"@types/tapable@^0":
-  version "0.2.5"
-  resolved "http://registry.npm.taobao.org/@types/tapable/download/@types/tapable-0.2.5.tgz#2443fc12da514c81346b1a665675559cee21fa75"
+"@types/tapable@*":
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/@types/tapable/-/tapable-1.0.2.tgz#e13182e1b69871a422d7863e11a4a6f5b814a4bd"
 
 "@types/uglify-js@*":
   version "3.0.2"
@@ -133,12 +133,12 @@
   version "1.13.6"
   resolved "http://registry.npm.taobao.org/@types/webpack-env/download/@types/webpack-env-1.13.6.tgz#128d1685a7c34d31ed17010fc87d6a12c1de6976"
 
-"@types/webpack@^3.8.4":
-  version "3.8.12"
-  resolved "http://registry.npm.taobao.org/@types/webpack/download/@types/webpack-3.8.12.tgz#c5db4f273fb8f2a4929db6c486e19e68c350e7ac"
+"@types/webpack@^4.4.0":
+  version "4.4.1"
+  resolved "https://registry.yarnpkg.com/@types/webpack/-/webpack-4.4.1.tgz#874ba31c4a147a31ee31bfef9d752913d2ddd596"
   dependencies:
     "@types/node" "*"
-    "@types/tapable" "^0"
+    "@types/tapable" "*"
     "@types/uglify-js" "*"
     source-map "^0.6.0"
 
@@ -6905,6 +6905,10 @@ redux-actions@^2.2.1:
     lodash "^4.13.1"
     lodash-es "^4.17.4"
     reduce-reducers "^0.1.0"
+
+redux-devtools-extension@^2.13.2:
+  version "2.13.2"
+  resolved "https://registry.yarnpkg.com/redux-devtools-extension/-/redux-devtools-extension-2.13.2.tgz#e0f9a8e8dfca7c17be92c7124958a3b94eb2911d"
 
 redux-logger@^3.0.6:
   version "3.0.6"

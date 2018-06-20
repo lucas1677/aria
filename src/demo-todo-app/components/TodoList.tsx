@@ -33,10 +33,6 @@ class TodoList extends React.Component<PropsType> {
 }
 
 export default connect(
-  (state: TodoAppState) => ({
-    todos: state.todos,
-  }),
-  {
-    fetchTodos: fetchTodos,
-  }
+  (state: TodoAppState) => ({todos: state.todos}),
+  {fetchTodos: fetchTodos}
 )(TodoList);
