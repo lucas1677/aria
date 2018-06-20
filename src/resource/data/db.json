@@ -3,22 +3,22 @@
     {
       "id": 1,
       "name": "Render static UI",
-      "isComplete": true
+      "isComplete": false
     },
     {
       "id": 2,
       "name": "Create initial state",
-      "isComplete": true
+      "isComplete": false
     },
     {
       "id": 3,
       "name": "Render based on state",
-      "isComplete": true
+      "isComplete": false
     },
     {
       "id": 4,
       "name": "Add json-server to project",
-      "isComplete": true
+      "isComplete": false
     },
     {
       "id": 5,
@@ -27,37 +27,37 @@
     },
     {
       "name": "222",
-      "isComplete": false,
+      "isComplete": true,
       "id": 6
     },
     {
       "name": "3333",
-      "isComplete": false,
+      "isComplete": true,
       "id": 7
     },
     {
       "name": "335555",
-      "isComplete": false,
+      "isComplete": true,
       "id": 8
     },
     {
       "name": "ARE WE COOL?",
-      "isComplete": false,
+      "isComplete": true,
       "id": 9
     },
     {
       "name": "ARE WE COOL?",
-      "isComplete": false,
+      "isComplete": true,
       "id": 10
     },
     {
       "name": "ARE WE COOL?",
-      "isComplete": false,
+      "isComplete": true,
       "id": 11
     },
     {
       "name": "222",
-      "isComplete": false,
+      "isComplete": true,
       "id": 12
     },
     {
@@ -72,42 +72,42 @@
     },
     {
       "name": "2222",
-      "isComplete": false,
+      "isComplete": true,
       "id": 15
     },
     {
       "name": "3333",
-      "isComplete": false,
+      "isComplete": true,
       "id": 16
     },
     {
       "name": "瓦达西瓦",
-      "isComplete": false,
+      "isComplete": true,
       "id": 17
     },
     {
       "name": "aa",
-      "isComplete": false,
+      "isComplete": true,
       "id": 18
     },
     {
       "name": "AAA",
-      "isComplete": false,
+      "isComplete": true,
       "id": 19
     },
     {
       "name": "FFF",
-      "isComplete": false,
+      "isComplete": true,
       "id": 20
     },
     {
       "name": "FDSF",
-      "isComplete": false,
+      "isComplete": true,
       "id": 21
     },
     {
       "name": "FDSAFSAJLFJLSAJLFJ",
-      "isComplete": false,
+      "isComplete": true,
       "id": 22
     }
   ]

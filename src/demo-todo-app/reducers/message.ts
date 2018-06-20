@@ -1,4 +1,4 @@
-import {TODO_ADD, TODOS_LOAD} from '@src/demo-todo-app/reducers/todo';
+import {TODO_ADD, TODO_REPLACE, TODOS_LOAD} from '@src/demo-todo-app/reducers/todo';
 
 const MESSAGE_SHOW = 'MESSAGE_SHOW';
 
@@ -13,6 +13,7 @@ export default (state: string = '', action) => {
       return action.payload;
     case TODOS_LOAD:
     case TODO_ADD:
+    case TODO_REPLACE:
       return '';
     default:
       return state;

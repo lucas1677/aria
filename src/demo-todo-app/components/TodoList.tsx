@@ -1,12 +1,14 @@
 import * as React from 'react';
 import {connect} from 'react-redux';
 
-import {fetchTodos} from '@src/demo-todo-app/reducers/todo';
+import {fetchTodos, toggleTodo} from '@src/demo-todo-app/reducers/todo';
 import {AppState, TodoItemState} from '@src/types/todoApp';
 
-const TodoItem = ({id, isComplete, name}) => (
+const TodoItem = ({id, isComplete, name, toggleTodoHandler}) => (
   <li>
-    <input type="checkbox" defaultChecked={isComplete}/>
+    <input type="checkbox" checked={isComplete}
+           onChange={() => toggleTodoHandler(id)}
+    />
     {name}
   </li>
 );
@@ -14,6 +16,7 @@ const TodoItem = ({id, isComplete, name}) => (
 type PropsType = {
   todos: TodoItemState[];
   fetchTodos: () => any;
+  toggleTodoHandler: any;
 };
 
 class TodoList extends React.Component<PropsType> {
@@ -25,7 +28,13 @@ class TodoList extends React.Component<PropsType> {
     return (
       <div className="Todo-list">
         <ul>
-          {this.props.todos.map(todo => <TodoItem key={todo.id} {...todo}/>)}
+          {this.props.todos
+            .map(todo =>
+              <TodoItem
+                key={todo.id} {...todo}
+                toggleTodoHandler={this.props.toggleTodoHandler}
+              />)
+          }
         </ul>
       </div>
     );
@@ -34,5 +43,8 @@ class TodoList extends React.Component<PropsType> {
 
 export default connect(
   (state: AppState) => ({todos: state.todo.todos}),
-  {fetchTodos: fetchTodos}
+  {
+    fetchTodos: fetchTodos,
+    toggleTodoHandler: toggleTodo,
+  }
 )(TodoList);
