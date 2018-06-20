@@ -1,13 +1,15 @@
 import * as React from 'react';
 import {connect} from 'react-redux';
 
+import {showMessage} from '@src/demo-todo-app/reducers/message';
 import {saveTodo, updateCurrent} from '@src/demo-todo-app/reducers/todo';
-import {TodoAppState} from '@src/types/todoApp';
+import {AppState} from '@src/types/todoApp';
 
 type TodoFormProps = {
   currentTodo: string;
   updateValue: any;
   saveTodo: any;
+  showMessage: (msg: string) => any;
 };
 
 class TodoForm extends React.Component<TodoFormProps> {
@@ -19,6 +21,7 @@ class TodoForm extends React.Component<TodoFormProps> {
     };
     const handleSubmit = (evt) => {
       evt.preventDefault();
+      this.props.showMessage('Saving Todo...');
       this.props.saveTodo(currentTodo);
     };
     return (
@@ -33,11 +36,12 @@ class TodoForm extends React.Component<TodoFormProps> {
 }
 
 export default connect(
-  (state: TodoAppState) => ({
-    currentTodo: state.currentTodo,
+  (state: AppState) => ({
+    currentTodo: state.todo.currentTodo,
   }),
   {
     updateValue: updateCurrent,
     saveTodo,
+    showMessage,
   }
 )(TodoForm);

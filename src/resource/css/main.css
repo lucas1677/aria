@@ -24,12 +24,16 @@
 }
 
 @keyframes App-logo-spin {
-    from { transform: rotate(0deg); }
-    to { transform: rotate(360deg); }
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
 }
 
 .Todo-App {
-    padding-top: 20px;
+    padding-top: 40px;
     display: inline-block;
     text-align: left;
 }
@@ -39,7 +43,7 @@
     margin: 0 auto;
 }
 
-form>input {
+form > input {
     font-size: 20px;
     width: 400px;
 }
@@ -51,4 +55,16 @@ ul {
 
 li {
     list-style-type: none;
+}
+
+.message {
+    background-color: #61DAFB;
+    color: white;
+    border: solid 1px #61DAFB;
+    position: absolute;
+    text-align: center;
+    width: 200px;
+    left: 50%;
+    margin-left: -100px;
+    top: 200px;
 }

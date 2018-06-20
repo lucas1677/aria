@@ -2,7 +2,7 @@ import * as React from 'react';
 import {connect} from 'react-redux';
 
 import {fetchTodos} from '@src/demo-todo-app/reducers/todo';
-import {TodoAppState, TodoItemState} from '@src/types/todoApp';
+import {AppState, TodoItemState} from '@src/types/todoApp';
 
 const TodoItem = ({id, isComplete, name}) => (
   <li>
@@ -33,6 +33,6 @@ class TodoList extends React.Component<PropsType> {
 }
 
 export default connect(
-  (state: TodoAppState) => ({todos: state.todos}),
+  (state: AppState) => ({todos: state.todo.todos}),
   {fetchTodos: fetchTodos}
 )(TodoList);

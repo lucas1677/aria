@@ -1,7 +1,7 @@
 import {createTodo, getTodos} from '@src/demo-todo-app/lib/todoServices';
-import {TodoAppState} from '@src/types/todoApp';
+import {TodoState} from '@src/types/todoApp';
 
-const initState: TodoAppState = {
+const initState: TodoState = {
   todos: [],
   currentTodo: '',
 };
@@ -32,7 +32,7 @@ export const saveTodo = (name) => {
   };
 };
 
-export default (state: TodoAppState = initState, action) => {
+export default (state: TodoState = initState, action) => {
   switch (action.type) {
     case TODO_ADD:
       return {...state, currentTodo: '', todos: state.todos.concat(action.payload)};
