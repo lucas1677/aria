@@ -18,7 +18,7 @@ const TodoItem = ({id, isComplete, name, toggleTodoHandler, deleteTodoHandler}) 
 
 type PropsType = {
   todos: TodoItemState[];
-  filter: string;
+  match: any;
   fetchTodos: () => any;
   toggleTodoHandler: any;
   deleteTodoHandler: any;
@@ -48,11 +48,10 @@ class TodoList extends React.Component<PropsType> {
 }
 
 export default connect(
-  (state: AppState) => ({
-    filter: state.todo.filter,
+  (state: AppState, ownProps: PropsType) => ({
     todos: getVisibleTodos(
       state.todo.todos,
-      state.todo.filter
+      ownProps.match.params.filter
     ),
   }),
   {

@@ -36,9 +36,7 @@ class TodoApp extends React.Component<Props> {
           <div className="Todo-App">
             <Message/>
             <TodoForm/>
-            <Route path="/:filter?" render={({match}) =>
-              <TodoList/>
-            }/>
+            <Route path="/:filter?" component={TodoList}/>
             <Footer/>
           </div>
         </Router>
