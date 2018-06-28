@@ -6,6 +6,7 @@ export type AppState = {
 export type TodoState = {
   todos: TodoItemState[];
   currentTodo: string;
+  filter: string;
 };
 
 export type TodoItemState = {

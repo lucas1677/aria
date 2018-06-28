@@ -1,10 +1,13 @@
 import * as React from 'react';
+import {BrowserRouter as Router, Route} from 'react-router-dom';
 
 import * as RoutesActions from '@src/actions/routes';
 
+import Footer from '@src/demo-todo-app/components/Footer';
 import Message from '@src/demo-todo-app/components/Message';
 import TodoForm from '@src/demo-todo-app/components/TodoForm';
 import TodoList from '@src/demo-todo-app/components/TodoList';
+
 import * as logo from '@src/resource/image/logo.svg';
 
 type Props = {
@@ -12,22 +15,11 @@ type Props = {
   targetAddress?: string;
   pushToTarget?: void;
   actions?: typeof RoutesActions;
-  todos?: TodoItem[];
   currentTodo?: string;
   updateCurrent?: (val: any) => void;
 };
 
-type TodoItem = {
-  id: number;
-  name: string;
-  isComplete: boolean;
-};
-
-type State = {
-  activeRoutePath: string;
-};
-
-class TodoApp extends React.Component<Props, State> {
+class TodoApp extends React.Component<Props> {
 
   constructor(props: Props) {
     super(props);
@@ -40,11 +32,16 @@ class TodoApp extends React.Component<Props, State> {
           <img src={logo} className="App-logo" alt="logo"/>
           <h1 className="App-title">Welcome to React with redux</h1>
         </header>
-        <div className="Todo-App">
-          <Message/>
-          <TodoForm/>
-          <TodoList/>
-        </div>
+        <Router>
+          <div className="Todo-App">
+            <Message/>
+            <TodoForm/>
+            <Route path="/:filter?" render={({match}) =>
+              <TodoList/>
+            }/>
+            <Footer/>
+          </div>
+        </Router>
       </div>
     );
   }

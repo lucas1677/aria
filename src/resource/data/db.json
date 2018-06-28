@@ -6,109 +6,19 @@
       "isComplete": false
     },
     {
-      "id": 2,
-      "name": "Create initial state",
-      "isComplete": false
-    },
-    {
-      "id": 3,
-      "name": "Render based on state",
-      "isComplete": false
-    },
-    {
       "id": 4,
       "name": "Add json-server to project",
-      "isComplete": false
+      "isComplete": true
     },
     {
       "id": 5,
       "name": "Use redux-thunk middleware to get data",
-      "isComplete": false
+      "isComplete": true
     },
     {
-      "name": "222",
-      "isComplete": true,
+      "name": "宝庆给延生调麦克风",
+      "isComplete": false,
       "id": 6
-    },
-    {
-      "name": "3333",
-      "isComplete": true,
-      "id": 7
-    },
-    {
-      "name": "335555",
-      "isComplete": true,
-      "id": 8
-    },
-    {
-      "name": "ARE WE COOL?",
-      "isComplete": true,
-      "id": 9
-    },
-    {
-      "name": "ARE WE COOL?",
-      "isComplete": true,
-      "id": 10
-    },
-    {
-      "name": "ARE WE COOL?",
-      "isComplete": true,
-      "id": 11
-    },
-    {
-      "name": "222",
-      "isComplete": true,
-      "id": 12
-    },
-    {
-      "name": "ARE WE COOL?",
-      "isComplete": false,
-      "id": 13
-    },
-    {
-      "name": "333",
-      "isComplete": false,
-      "id": 14
-    },
-    {
-      "name": "2222",
-      "isComplete": true,
-      "id": 15
-    },
-    {
-      "name": "3333",
-      "isComplete": true,
-      "id": 16
-    },
-    {
-      "name": "瓦达西瓦",
-      "isComplete": true,
-      "id": 17
-    },
-    {
-      "name": "aa",
-      "isComplete": true,
-      "id": 18
-    },
-    {
-      "name": "AAA",
-      "isComplete": true,
-      "id": 19
-    },
-    {
-      "name": "FFF",
-      "isComplete": true,
-      "id": 20
-    },
-    {
-      "name": "FDSF",
-      "isComplete": true,
-      "id": 21
-    },
-    {
-      "name": "FDSAFSAJLFJLSAJLFJ",
-      "isComplete": true,
-      "id": 22
     }
   ]
 }
