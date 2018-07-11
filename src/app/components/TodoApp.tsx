@@ -3,10 +3,10 @@ import {BrowserRouter as Router, Route} from 'react-router-dom';
 
 import * as RoutesActions from '@src/actions/routes';
 
-import Footer from '@src/demo-todo-app/components/Footer';
-import Message from '@src/demo-todo-app/components/Message';
-import TodoForm from '@src/demo-todo-app/components/TodoForm';
-import TodoList from '@src/demo-todo-app/components/TodoList';
+import Footer from '@src/app/components/Footer';
+import Message from '@src/app/components/Message';
+import TodoForm from '@src/app/components/TodoForm';
+import TodoList from '@src/app/components/TodoList';
 
 import * as logo from '@src/resource/image/logo.svg';
 

@@ -1,4 +1,4 @@
-import {TODO_ADD, TODO_REMOVE, TODO_REPLACE, TODOS_LOAD} from '@src/demo-todo-app/reducers/todo';
+import {TODO_ADD, TODO_REMOVE, TODO_REPLACE, TODOS_LOAD} from '@src/app/reducers/todo';
 
 const MESSAGE_SHOW = 'MESSAGE_SHOW';
 

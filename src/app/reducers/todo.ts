@@ -1,5 +1,5 @@
-import {createTodo, destoryTodo, getTodos, updateTodo} from '@src/demo-todo-app/lib/todoServices';
-import {showMessage} from '@src/demo-todo-app/reducers/message';
+import {createTodo, destoryTodo, getTodos, updateTodo} from '@src/app/lib/todoServices';
+import {showMessage} from '@src/app/reducers/message';
 import {TodoState} from '@src/types/todoApp';
 
 const initState: TodoState = {

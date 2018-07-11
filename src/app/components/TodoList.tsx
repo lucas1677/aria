@@ -1,7 +1,7 @@
 import * as React from 'react';
 import {connect} from 'react-redux';
 
-import {deleteTodo, fetchTodos, getVisibleTodos, toggleTodo} from '@src/demo-todo-app/reducers/todo';
+import {deleteTodo, fetchTodos, getVisibleTodos, toggleTodo} from '@src/app/reducers/todo';
 import {AppState, TodoItemState} from '@src/types/todoApp';
 
 const TodoItem = ({id, isComplete, name, toggleTodoHandler, deleteTodoHandler}) => (

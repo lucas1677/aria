@@ -3,7 +3,7 @@ import * as ReactDom from 'react-dom';
 
 import {Provider} from 'react-redux';
 
-import TodoApp from '@src/demo-todo-app/components/TodoApp';
+import TodoApp from '@src/app/components/TodoApp';
 import store from '@src/store';
 
 import mainStyle from '@src/resource/css/main.css';

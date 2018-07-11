@@ -1,8 +1,8 @@
 import * as React from 'react';
 import {connect} from 'react-redux';
 
-import {showMessage} from '@src/demo-todo-app/reducers/message';
-import {saveTodo, updateCurrent} from '@src/demo-todo-app/reducers/todo';
+import {showMessage} from '@src/app/reducers/message';
+import {saveTodo, updateCurrent} from '@src/app/reducers/todo';
 import {AppState} from '@src/types/todoApp';
 
 type TodoFormProps = {

@@ -3,8 +3,8 @@ import {applyMiddleware, combineReducers, createStore} from 'redux';
 import {composeWithDevTools} from 'redux-devtools-extension';
 import thunk from 'redux-thunk';
 
-import messageReducer from '@src/demo-todo-app/reducers/message';
-import todoReducer from '@src/demo-todo-app/reducers/todo';
+import messageReducer from '@src/app/reducers/message';
+import todoReducer from '@src/app/reducers/todo';
 import {createBrowserHistory} from 'history';
 
 const reducer = combineReducers({

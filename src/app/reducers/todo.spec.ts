@@ -1,4 +1,4 @@
-import reducer from '@src/demo-todo-app/reducers/todo';
+import reducer from '@src/app/reducers/todo';
 import {TodoAppState} from '@src/types/todoApp';
 
 describe('Todo Reducer', () => {
