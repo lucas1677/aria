@@ -1,8 +1,6 @@
 import * as React from 'react';
 import {BrowserRouter as Router, Route} from 'react-router-dom';
 
-import * as RoutesActions from '@src/actions/routes';
-
 import Footer from '@src/app/components/Footer';
 import Message from '@src/app/components/Message';
 import TodoForm from '@src/app/components/TodoForm';
@@ -14,7 +12,6 @@ type Props = {
   title?: string;
   targetAddress?: string;
   pushToTarget?: void;
-  actions?: typeof RoutesActions;
   currentTodo?: string;
   updateCurrent?: (val: any) => void;
 };
